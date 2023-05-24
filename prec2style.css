@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    /* overflow-x : x축의 내용이 더 길 때(가로) 어떻게 보일지 선택
+    hidden : 부모요소의 범위를 넘어가는 자식 요소의 부분은 보이지 않도록 처리
+    (가로 스크롤바가 나타나지 않을 뿐 브라우저에 따라 세로 스크롤바는 나타남)
+    */
+    overflow-x: hidden;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+}
+.navigation
+{
+    position: fixed;
+    width:300px;
+    height: 100%;
+    background: #003147;
+    /* transition : 애니메이션 효과 */
+    transition: 0.5s; 
+    /* overflow : 콘텐츠가 커서 요소 내에 모두 보여주기 힘들 때 보여줄 방법 지정 
+    hidden : 넘치는 부분은 잘라서 보이지 않게 하기*/
+    overflow: hidden;
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    /* list-style : 항목 모양의 종류, 위치, 항목에 넣을 이미지를 한꺼번에 지정 가능 
+    none : 항목 표시가 되지 않음*/
+    list-style: none;
+}
+.navigation ul li:hover
+{
+    background: #03a9f4;
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 20px;
+}
+/* 첫번째 child(브랜드 이름) 빼고 hover effect 주기 */
+.navigation ul li:nth-child(1):hover
+{
+    background: transparent;
+
+}
+.navigation ul li a 
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fa
+{
+    color: #fff;
+    font-size: 24px;
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px; /*줄 높이*/
+    /* white-space : 요소의 공백을 어떻게 처리할 지를 정의
+    nowrap : normal과 같이 공백을 채우지만 가로로 긴 줄에서도 줄 바꿈을 하지 않고 표시  */
+    white-space: nowrap;
+}
